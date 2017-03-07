@@ -15,10 +15,12 @@ let promise = fetch(
       console.log(each);
       let listItems = document.createElement("li");
       let orgName = document.createElement("h2");
-
+      let avatar = document.createElement("img");
       listItems.appendChild(orgName);
       document.querySelector("#organizations ul").appendChild(listItems);
+      document.querySelector("#organizations ul").appendChild(avatar);
       orgName.innerText = each.login;
+
       console.log(each.login);
 
 
