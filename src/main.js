@@ -11,10 +11,16 @@ let promise = fetch(
   promise.then( function handleResponse(response) {
   console.log(response);
   response.json().then(function userOrgFind(userOrgs) {
-    userOrgs.forEach(function printOrgs(orgs) {
-      console.log(orgs);
+    userOrgs.forEach(function printOrgs(each) {
+      console.log(each);
       let listItems = document.createElement("li");
+      let orgName = document.createElement("h2");
+
+      listItems.appendChild(orgName);
       document.querySelector("#organizations ul").appendChild(listItems);
+      orgName.innerText = each.login;
+      console.log(each.login);
+
 
     }) ;
 
