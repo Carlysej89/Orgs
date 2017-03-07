@@ -20,7 +20,7 @@ let promise = fetch(
       document.querySelector("#organizations ul").appendChild(listItems);
       document.querySelector("#organizations ul").appendChild(avatar);
       orgName.innerText = each.login;
-
+      avatar.setAttribute("src", each.avatar_url);
       console.log(each.login);
 
 
