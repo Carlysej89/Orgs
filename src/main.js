@@ -14,7 +14,7 @@ let promise = fetch(
     userOrgs.forEach(function printOrgs(orgs) {
       console.log(orgs);
       let listItems = document.createElement("li");
-      document.getElementById("organizations").appendChild(listItems);
+      document.querySelector("#organizations ul").appendChild(listItems);
 
     }) ;
 
