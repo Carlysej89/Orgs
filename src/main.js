@@ -14,13 +14,15 @@ let promise = fetch(
     userOrgs.forEach(function printOrgs(each) {
       console.log(each);
       let listItems = document.createElement("li");
-      let orgName = document.createElement("h2");
+      let orgName = document.createElement("h1");
       let avatar = document.createElement("img");
+      avatar.setAttribute("src", each.avatar_url);
+      listItems.classList.add("well");
+
+      listItems.appendChild(avatar);
       listItems.appendChild(orgName);
       document.querySelector("#organizations ul").appendChild(listItems);
-      document.querySelector("#organizations ul").appendChild(avatar);
       orgName.innerText = each.login;
-      avatar.setAttribute("src", each.avatar_url);
       console.log(each.login);
 
 
