@@ -1,0 +1,22 @@
+// let authKey = "a678c70e5f0d9e6d2cc1f27f9c1856157bc9ad09"; //DO NOT COMMIT. NO REALLY. DON'T DO IT.
+let promise = fetch(
+  "https://api.github.com/users/addyosmani/orgs",
+  {
+    method: "GET",
+    headers: {
+      Authorization: "token " + ""
+    },
+  } );
+
+  promise.then( function handleResponse(response) {
+  console.log(response);
+  response.json().then(function userOrgFind(userOrgs) {
+    userOrgs.forEach(function printOrgs(orgs) {
+      console.log(orgs);
+      let listItems = document.createElement("li");
+      document.getElementById("organizations").appendChild(listItems);
+
+    }) ;
+
+  });
+  });
