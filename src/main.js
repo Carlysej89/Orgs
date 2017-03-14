@@ -1,9 +1,9 @@
 let promise = fetch(
-  "https://api.github.com/users/addyosmani/orgs",
+  "https://api.github.com/users/addyosmani/orgsX",
   {
     method: "GET",
     headers: {
-      Authorization: "token " + ""
+      Authorization: "token " + "d5a53edf98ce8343d663e48b7cdce8dd485d3153"
     },
   } );
 
@@ -27,6 +27,7 @@ promise.then( function handleResponse(response) {
     });
   }
   else {
-    console.log(response.status, "#SAD");
+    document.querySelector(".error").append("This " + response.status + " error is tremendous. #SAD");
+        console.log(response.status, "#SAD");
   }
 });
