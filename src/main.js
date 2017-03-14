@@ -3,7 +3,7 @@ let promise = fetch(
   {
     method: "GET",
     headers: {
-      Authorization: "token " + "073bfc4ab5e141035aba9ff902e9c036c504b192"
+      Authorization: "token " + ""
     },
   } );
 
