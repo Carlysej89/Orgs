@@ -1,9 +1,9 @@
 let promise = fetch(
-  "https://api.github.com/users/addyosmani/orgsX",
+  "https://api.github.com/users/addyosmani/orgs",
   {
     method: "GET",
     headers: {
-      Authorization: "token " + "d5a53edf98ce8343d663e48b7cdce8dd485d3153"
+      Authorization: "token " + ""
     },
   } );
 
