@@ -9,6 +9,7 @@ let promise = fetch(
 
   promise.then( function handleResponse(response) {
     console.log(response);
+    if (response.status > 199 && response.status < 300) {
     response.json().then(function userOrgFind(userOrgs) {
       userOrgs.forEach(function printOrgs(each) {
         console.log(each);
@@ -28,4 +29,8 @@ let promise = fetch(
       }) ;
 
     });
-  });
+  }
+else {
+  console.log(response.status, "#SAD");
+}
+});
