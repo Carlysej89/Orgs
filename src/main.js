@@ -7,9 +7,9 @@ let promise = fetch(
     },
   } );
 
-  promise.then( function handleResponse(response) {
-    console.log(response);
-    if (response.status > 199 && response.status < 300) {
+promise.then( function handleResponse(response) {
+  console.log(response);
+  if (response.status > 199 && response.status < 300) {
     response.json().then(function userOrgFind(userOrgs) {
       userOrgs.forEach(function printOrgs(each) {
         console.log(each);
@@ -18,19 +18,15 @@ let promise = fetch(
         let avatar = document.createElement("img");
         avatar.setAttribute("src", each.avatar_url);
         listItems.classList.add("well");
-
         listItems.appendChild(avatar);
         listItems.appendChild(orgName);
         document.querySelector("#organizations ul").appendChild(listItems);
         orgName.innerText = each.login;
         console.log(each.login);
-
-
       }) ;
-
     });
   }
-else {
-  console.log(response.status, "#SAD");
-}
+  else {
+    console.log(response.status, "#SAD");
+  }
 });
